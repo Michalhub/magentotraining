@@ -1,0 +1,20 @@
+<config>
+    <modules>
+        <Magentotask_Helloworld>
+            <version>0.0.1</version>
+        </Magentotask_Helloworld>
+    </modules>
+
+    <frontend>
+        <routers>
+            <helloworld>
+                <use>standard</use>
+                <args>
+                    <module>Magentotask_Helloworld</module>
+                    <frontName>helloworld</frontName>
+                </args>
+            </helloworld>
+        </routers>
+    </frontend>
+
+</config>

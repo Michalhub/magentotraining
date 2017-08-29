@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<config>
+    <menu>
+        <sales>
+            <children>
+                <magentotask_weblog translate="title" module="magentotask_weblog">
+                    <sort_order>10</sort_order>
+                    <title>TestTask</title>
+                    <action>adminhtml/order/</action>
+                </magentotask_weblog>
+            </children>
+        </sales>
+    </menu>
+</config>

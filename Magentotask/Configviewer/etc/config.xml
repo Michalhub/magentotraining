@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Magentotask_Configviewer>
+            <version>0.0.1</version>
+        </Magentotask_Configviewer>
+    </modules>
+
+    <global>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <Magentotutorial_configviewer_model_observer>
+                        <type>singleton</type>
+                        <class>Magentotask_Configviewer_Model_Observer</class>
+                        <method>checkForConfigRequest</method>
+                    </Magentotutorial_configviewer_model_observer>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+</config>

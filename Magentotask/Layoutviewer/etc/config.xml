@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Magentotask_Layoutviewer>
+            <version>0.0.1</version>
+        </Magentotask_Layoutviewer>
+    </modules>
+
+    <global>
+        <models>
+            <magentotask_layoutviewer>
+                <class>Magentotask_Layoutviewer_Model</class>
+            </magentotask_layoutviewer>
+
+            <core>
+                <rewrite>
+                    <layout_update>Magentotask_Layoutviewer_Model_Layout_Update</layout_update>
+                </rewrite>
+            </core>
+        </models>
+
+        <events>
+            <controller_action_postdispatch>
+                <observers>
+                    <magentotask_layoutviewer_model_observer>
+                        <type>singleton</type>
+                        <class>Magentotask_Layoutviewer_Model_Observer</class>
+                        <method>checkForLayoutDisplayRequest</method>
+                    </magentotask_layoutviewer_model_observer>
+                </observers>
+            </controller_action_postdispatch>
+        </events>
+    </global>
+</config>
+

@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Magentotask_Weblog>
+            <version>0.0.1</version>
+        </Magentotask_Weblog>
+    </modules>
+
+    <frontend>
+        <routers>
+            <weblog>
+                <use>standard</use>
+                <args>
+                    <module>Magentotask_Weblog</module>
+                    <frontName>weblog</frontName>
+                </args>
+            </weblog>
+        </routers>
+    </frontend>
+
+    <global>
+
+        <models>
+            <weblog>
+                <class>Magentotask_Weblog_Model</class>
+                <resourceModel>weblog_resource</resourceModel>
+            </weblog>
+            <weblog_resource>
+                <class>Magentotask_Weblog_Model_Resource</class>
+                <entities>
+                    <magentotaskreport>
+                        <table>magentotask_report</table>
+                    </magentotaskreport>
+                </entities>
+            </weblog_resource>
+        </models>
+
+        <events>
+            <catalog_controller_product_view>
+                <observers>
+                    <weblog>
+                        <type>model</type>
+                        <class>weblog/observer</class>
+                        <method>observeProduct</method>
+                    </weblog>
+                </observers>
+            </catalog_controller_product_view>
+        </events>
+
+        <resources>
+            <weblog_setup>
+                <setup>
+                    <module>Magentotask_Weblog</module>
+                    <class>Magentotask_Weblog_Model_Resource_Setup</class>
+                </setup>
+            </weblog_setup>
+        </resources>
+
+        <blocks>
+            <Magentotask_weblog>
+                <class>Magentotask_Weblog_Block</class>
+            </Magentotask_weblog>
+        </blocks>
+
+        <helpers>
+            <magentotask_weblog>
+                <class>Magentotask_Weblog_Helper</class>
+            </magentotask_weblog>
+        </helpers>
+
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Magentotask_Weblog before="Mage_Adminhtml">Magentotask_Weblog_Adminhtml</Magentotask_Weblog>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+</config>
